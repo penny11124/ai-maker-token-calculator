@@ -88,11 +88,8 @@ details label{display:grid;grid-template-columns:minmax(0,1fr) 104px;gap:12px;al
     </div>
 
     <div class="result" aria-live="polite">
-      <div>
         <div class="k">預估費用</div>
         <div class="total"><span id="total">30</span><small>枚代幣</small></div>
-      </div>
-      <div class="twd">約<b id="twd">NT$30</b></div>
     </div>
   </div>
   <p class="hint">試算結果僅供參考，實際以訓練前系統估價為準。訓練失敗會全額退回。</p>
@@ -129,7 +126,6 @@ function calc(){
   const mb=Math.floor(n*size+1e-9);
   const total=Math.max(Math.round((mb*ep*UNIT*K[model]+Number.EPSILON)*100)/100,1);
   $("total").textContent=fmt(total);
-  $("twd").textContent="NT$"+Math.ceil(total).toLocaleString("zh-TW");
 }
 calc();
 </script>
